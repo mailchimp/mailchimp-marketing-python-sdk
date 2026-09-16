@@ -6,7 +6,7 @@
     "package_name": "mailchimp_marketing",
     "client_class_name": "MailchimpClient"
   },
-  "originGitCommit": "f1b5e6ecfb06c6c622489ec6bc9ef8d9db831190",
+  "originGitCommit": "ade6eda97ecb66ede512e91ba4e677a24871de58",
   "originGitCommitIsDirty": false,
   "invokedBy": "ci",
   "ciProvider": "github",
