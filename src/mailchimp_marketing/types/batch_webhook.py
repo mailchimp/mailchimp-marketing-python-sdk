@@ -40,11 +40,6 @@ class BatchWebhook(UniversalBaseModel):
     Whether outbound deliveries are HMAC-signed.
     """
 
-    signing_secret: typing.Optional[str] = pydantic.Field(default=None)
-    """
-    The HMAC signing secret. Returned exactly once at creation. This should be stored securely; if lost, delete and recreate the webhook to obtain a new secret.
-    """
-
     url: typing.Optional[str] = pydantic.Field(default=None)
     """
     A valid URL for the Webhook.

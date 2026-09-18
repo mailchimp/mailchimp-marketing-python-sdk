@@ -12,6 +12,7 @@ from ..core.parse_error import ParsingError
 from ..core.pydantic_utilities import parse_obj_as
 from ..core.request_options import RequestOptions
 from ..types.batch_webhook import BatchWebhook
+from .types.create_batch_webhooks_response import CreateBatchWebhooksResponse
 from .types.list_batch_webhooks_response import ListBatchWebhooksResponse
 from pydantic import ValidationError
 
@@ -106,7 +107,7 @@ class RawBatchWebhooksClient:
         url: str,
         enabled: typing.Optional[bool] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> HttpResponse[BatchWebhook]:
+    ) -> HttpResponse[CreateBatchWebhooksResponse]:
         """
         Configure a webhook that will fire whenever any batch request completes processing.  You may only have a maximum of 20 batch webhooks.
 
@@ -123,7 +124,7 @@ class RawBatchWebhooksClient:
 
         Returns
         -------
-        HttpResponse[BatchWebhook]
+        HttpResponse[CreateBatchWebhooksResponse]
 
         """
         _response = self._client_wrapper.httpx_client.request(
@@ -142,9 +143,9 @@ class RawBatchWebhooksClient:
         try:
             if 200 <= _response.status_code < 300:
                 _data = typing.cast(
-                    BatchWebhook,
+                    CreateBatchWebhooksResponse,
                     parse_obj_as(
-                        type_=BatchWebhook,  # type: ignore
+                        type_=CreateBatchWebhooksResponse,  # type: ignore
                         object_=_response.json(),
                     ),
                 )
@@ -406,7 +407,7 @@ class AsyncRawBatchWebhooksClient:
         url: str,
         enabled: typing.Optional[bool] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> AsyncHttpResponse[BatchWebhook]:
+    ) -> AsyncHttpResponse[CreateBatchWebhooksResponse]:
         """
         Configure a webhook that will fire whenever any batch request completes processing.  You may only have a maximum of 20 batch webhooks.
 
@@ -423,7 +424,7 @@ class AsyncRawBatchWebhooksClient:
 
         Returns
         -------
-        AsyncHttpResponse[BatchWebhook]
+        AsyncHttpResponse[CreateBatchWebhooksResponse]
 
         """
         _response = await self._client_wrapper.httpx_client.request(
@@ -442,9 +443,9 @@ class AsyncRawBatchWebhooksClient:
         try:
             if 200 <= _response.status_code < 300:
                 _data = typing.cast(
-                    BatchWebhook,
+                    CreateBatchWebhooksResponse,
                     parse_obj_as(
-                        type_=BatchWebhook,  # type: ignore
+                        type_=CreateBatchWebhooksResponse,  # type: ignore
                         object_=_response.json(),
                     ),
                 )

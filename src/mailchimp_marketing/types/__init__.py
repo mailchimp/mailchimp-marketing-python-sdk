@@ -18,6 +18,38 @@ if typing.TYPE_CHECKING:
     from .add_webhook import AddWebhook
     from .add_webhook_events import AddWebhookEvents
     from .add_webhook_sources import AddWebhookSources
+    from .audiences_contact import AudiencesContact
+    from .audiences_contact_email_channel import AudiencesContactEmailChannel
+    from .audiences_contact_email_channel_effective_subscription_status import (
+        AudiencesContactEmailChannelEffectiveSubscriptionStatus,
+    )
+    from .audiences_contact_email_channel_effective_subscription_status_value import (
+        AudiencesContactEmailChannelEffectiveSubscriptionStatusValue,
+    )
+    from .audiences_contact_email_channel_marketing_consent import AudiencesContactEmailChannelMarketingConsent
+    from .audiences_contact_email_channel_marketing_consent_source import (
+        AudiencesContactEmailChannelMarketingConsentSource,
+    )
+    from .audiences_contact_email_channel_marketing_consent_status import (
+        AudiencesContactEmailChannelMarketingConsentStatus,
+    )
+    from .audiences_contact_email_channel_source import AudiencesContactEmailChannelSource
+    from .audiences_contact_language import AudiencesContactLanguage
+    from .audiences_contact_merge_fields_value import AudiencesContactMergeFieldsValue
+    from .audiences_contact_merge_fields_value_addr1 import AudiencesContactMergeFieldsValueAddr1
+    from .audiences_contact_sms_channel import AudiencesContactSmsChannel
+    from .audiences_contact_sms_channel_effective_subscription_status import (
+        AudiencesContactSmsChannelEffectiveSubscriptionStatus,
+    )
+    from .audiences_contact_sms_channel_effective_subscription_status_value import (
+        AudiencesContactSmsChannelEffectiveSubscriptionStatusValue,
+    )
+    from .audiences_contact_sms_channel_marketing_consent import AudiencesContactSmsChannelMarketingConsent
+    from .audiences_contact_sms_channel_marketing_consent_source import AudiencesContactSmsChannelMarketingConsentSource
+    from .audiences_contact_sms_channel_marketing_consent_status import AudiencesContactSmsChannelMarketingConsentStatus
+    from .audiences_contact_sms_channel_source import AudiencesContactSmsChannelSource
+    from .audiences_contact_source import AudiencesContactSource
+    from .audiences_contact_status import AudiencesContactStatus
     from .automation_workflow import AutomationWorkflow
     from .automation_workflow_email import AutomationWorkflowEmail
     from .automation_workflow_email_delay import AutomationWorkflowEmailDelay
@@ -690,6 +722,26 @@ _dynamic_imports: typing.Dict[str, str] = {
     "AddWebhook": ".add_webhook",
     "AddWebhookEvents": ".add_webhook_events",
     "AddWebhookSources": ".add_webhook_sources",
+    "AudiencesContact": ".audiences_contact",
+    "AudiencesContactEmailChannel": ".audiences_contact_email_channel",
+    "AudiencesContactEmailChannelEffectiveSubscriptionStatus": ".audiences_contact_email_channel_effective_subscription_status",
+    "AudiencesContactEmailChannelEffectiveSubscriptionStatusValue": ".audiences_contact_email_channel_effective_subscription_status_value",
+    "AudiencesContactEmailChannelMarketingConsent": ".audiences_contact_email_channel_marketing_consent",
+    "AudiencesContactEmailChannelMarketingConsentSource": ".audiences_contact_email_channel_marketing_consent_source",
+    "AudiencesContactEmailChannelMarketingConsentStatus": ".audiences_contact_email_channel_marketing_consent_status",
+    "AudiencesContactEmailChannelSource": ".audiences_contact_email_channel_source",
+    "AudiencesContactLanguage": ".audiences_contact_language",
+    "AudiencesContactMergeFieldsValue": ".audiences_contact_merge_fields_value",
+    "AudiencesContactMergeFieldsValueAddr1": ".audiences_contact_merge_fields_value_addr1",
+    "AudiencesContactSmsChannel": ".audiences_contact_sms_channel",
+    "AudiencesContactSmsChannelEffectiveSubscriptionStatus": ".audiences_contact_sms_channel_effective_subscription_status",
+    "AudiencesContactSmsChannelEffectiveSubscriptionStatusValue": ".audiences_contact_sms_channel_effective_subscription_status_value",
+    "AudiencesContactSmsChannelMarketingConsent": ".audiences_contact_sms_channel_marketing_consent",
+    "AudiencesContactSmsChannelMarketingConsentSource": ".audiences_contact_sms_channel_marketing_consent_source",
+    "AudiencesContactSmsChannelMarketingConsentStatus": ".audiences_contact_sms_channel_marketing_consent_status",
+    "AudiencesContactSmsChannelSource": ".audiences_contact_sms_channel_source",
+    "AudiencesContactSource": ".audiences_contact_source",
+    "AudiencesContactStatus": ".audiences_contact_status",
     "AutomationWorkflow": ".automation_workflow",
     "AutomationWorkflowEmail": ".automation_workflow_email",
     "AutomationWorkflowEmailDelay": ".automation_workflow_email_delay",
@@ -1334,6 +1386,26 @@ __all__ = [
     "AddWebhook",
     "AddWebhookEvents",
     "AddWebhookSources",
+    "AudiencesContact",
+    "AudiencesContactEmailChannel",
+    "AudiencesContactEmailChannelEffectiveSubscriptionStatus",
+    "AudiencesContactEmailChannelEffectiveSubscriptionStatusValue",
+    "AudiencesContactEmailChannelMarketingConsent",
+    "AudiencesContactEmailChannelMarketingConsentSource",
+    "AudiencesContactEmailChannelMarketingConsentStatus",
+    "AudiencesContactEmailChannelSource",
+    "AudiencesContactLanguage",
+    "AudiencesContactMergeFieldsValue",
+    "AudiencesContactMergeFieldsValueAddr1",
+    "AudiencesContactSmsChannel",
+    "AudiencesContactSmsChannelEffectiveSubscriptionStatus",
+    "AudiencesContactSmsChannelEffectiveSubscriptionStatusValue",
+    "AudiencesContactSmsChannelMarketingConsent",
+    "AudiencesContactSmsChannelMarketingConsentSource",
+    "AudiencesContactSmsChannelMarketingConsentStatus",
+    "AudiencesContactSmsChannelSource",
+    "AudiencesContactSource",
+    "AudiencesContactStatus",
     "AutomationWorkflow",
     "AutomationWorkflowEmail",
     "AutomationWorkflowEmailDelay",

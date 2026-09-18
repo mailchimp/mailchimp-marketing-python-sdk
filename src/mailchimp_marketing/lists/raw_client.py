@@ -51,6 +51,7 @@ from .types.create_segment_lists_request_options import CreateSegmentListsReques
 from .types.create_signup_form_lists_request_contents_item import CreateSignupFormListsRequestContentsItem
 from .types.create_signup_form_lists_request_header import CreateSignupFormListsRequestHeader
 from .types.create_signup_form_lists_request_styles_item import CreateSignupFormListsRequestStylesItem
+from .types.create_webhook_lists_response import CreateWebhookListsResponse
 from .types.list_abuse_reports_lists_response import ListAbuseReportsListsResponse
 from .types.list_activity_lists_response import ListActivityListsResponse
 from .types.list_activity_lists_response_activity_item import ListActivityListsResponseActivityItem
@@ -5094,7 +5095,7 @@ class RawListsClient:
         sources: typing.Optional[AddWebhookSources] = OMIT,
         url: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> HttpResponse[ListWebhooks]:
+    ) -> HttpResponse[CreateWebhookListsResponse]:
         """
         Create a new webhook for a specific list.
 
@@ -5117,7 +5118,7 @@ class RawListsClient:
 
         Returns
         -------
-        HttpResponse[ListWebhooks]
+        HttpResponse[CreateWebhookListsResponse]
 
         """
         _response = self._client_wrapper.httpx_client.request(
@@ -5141,9 +5142,9 @@ class RawListsClient:
         try:
             if 200 <= _response.status_code < 300:
                 _data = typing.cast(
-                    ListWebhooks,
+                    CreateWebhookListsResponse,
                     parse_obj_as(
-                        type_=ListWebhooks,  # type: ignore
+                        type_=CreateWebhookListsResponse,  # type: ignore
                         object_=_response.json(),
                     ),
                 )
@@ -10335,7 +10336,7 @@ class AsyncRawListsClient:
         sources: typing.Optional[AddWebhookSources] = OMIT,
         url: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> AsyncHttpResponse[ListWebhooks]:
+    ) -> AsyncHttpResponse[CreateWebhookListsResponse]:
         """
         Create a new webhook for a specific list.
 
@@ -10358,7 +10359,7 @@ class AsyncRawListsClient:
 
         Returns
         -------
-        AsyncHttpResponse[ListWebhooks]
+        AsyncHttpResponse[CreateWebhookListsResponse]
 
         """
         _response = await self._client_wrapper.httpx_client.request(
@@ -10382,9 +10383,9 @@ class AsyncRawListsClient:
         try:
             if 200 <= _response.status_code < 300:
                 _data = typing.cast(
-                    ListWebhooks,
+                    CreateWebhookListsResponse,
                     parse_obj_as(
-                        type_=ListWebhooks,  # type: ignore
+                        type_=CreateWebhookListsResponse,  # type: ignore
                         object_=_response.json(),
                     ),
                 )

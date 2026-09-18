@@ -7,6 +7,7 @@ from ..core.pagination import AsyncPager, SyncPager
 from ..core.request_options import RequestOptions
 from ..types.batch_webhook import BatchWebhook
 from .raw_client import AsyncRawBatchWebhooksClient, RawBatchWebhooksClient
+from .types.create_batch_webhooks_response import CreateBatchWebhooksResponse
 from .types.list_batch_webhooks_response import ListBatchWebhooksResponse
 
 # this is used as the default value for optional parameters
@@ -86,7 +87,7 @@ class BatchWebhooksClient:
         url: str,
         enabled: typing.Optional[bool] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> BatchWebhook:
+    ) -> CreateBatchWebhooksResponse:
         """
         Configure a webhook that will fire whenever any batch request completes processing.  You may only have a maximum of 20 batch webhooks.
 
@@ -103,7 +104,7 @@ class BatchWebhooksClient:
 
         Returns
         -------
-        BatchWebhook
+        CreateBatchWebhooksResponse
 
 
         Examples
@@ -323,7 +324,7 @@ class AsyncBatchWebhooksClient:
         url: str,
         enabled: typing.Optional[bool] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> BatchWebhook:
+    ) -> CreateBatchWebhooksResponse:
         """
         Configure a webhook that will fire whenever any batch request completes processing.  You may only have a maximum of 20 batch webhooks.
 
@@ -340,7 +341,7 @@ class AsyncBatchWebhooksClient:
 
         Returns
         -------
-        BatchWebhook
+        CreateBatchWebhooksResponse
 
 
         Examples
