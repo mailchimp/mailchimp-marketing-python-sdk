@@ -45,6 +45,7 @@ from .types.create_segment_lists_request_options import CreateSegmentListsReques
 from .types.create_signup_form_lists_request_contents_item import CreateSignupFormListsRequestContentsItem
 from .types.create_signup_form_lists_request_header import CreateSignupFormListsRequestHeader
 from .types.create_signup_form_lists_request_styles_item import CreateSignupFormListsRequestStylesItem
+from .types.create_webhook_lists_response import CreateWebhookListsResponse
 from .types.list_abuse_reports_lists_response import ListAbuseReportsListsResponse
 from .types.list_activity_lists_response import ListActivityListsResponse
 from .types.list_activity_lists_response_activity_item import ListActivityListsResponseActivityItem
@@ -4220,7 +4221,7 @@ class ListsClient:
         sources: typing.Optional[AddWebhookSources] = OMIT,
         url: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> ListWebhooks:
+    ) -> CreateWebhookListsResponse:
         """
         Create a new webhook for a specific list.
 
@@ -4243,7 +4244,7 @@ class ListsClient:
 
         Returns
         -------
-        ListWebhooks
+        CreateWebhookListsResponse
 
 
         Examples
@@ -9042,7 +9043,7 @@ class AsyncListsClient:
         sources: typing.Optional[AddWebhookSources] = OMIT,
         url: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
-    ) -> ListWebhooks:
+    ) -> CreateWebhookListsResponse:
         """
         Create a new webhook for a specific list.
 
@@ -9065,7 +9066,7 @@ class AsyncListsClient:
 
         Returns
         -------
-        ListWebhooks
+        CreateWebhookListsResponse
 
 
         Examples

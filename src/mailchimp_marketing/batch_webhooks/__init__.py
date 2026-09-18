@@ -7,11 +7,13 @@ from importlib import import_module
 
 if typing.TYPE_CHECKING:
     from .types import (
+        CreateBatchWebhooksResponse,
         ListBatchWebhooksResponse,
         ListBatchWebhooksResponseLinksItem,
         ListBatchWebhooksResponseLinksItemMethod,
     )
 _dynamic_imports: typing.Dict[str, str] = {
+    "CreateBatchWebhooksResponse": ".types",
     "ListBatchWebhooksResponse": ".types",
     "ListBatchWebhooksResponseLinksItem": ".types",
     "ListBatchWebhooksResponseLinksItemMethod": ".types",
@@ -40,6 +42,7 @@ def __dir__():
 
 
 __all__ = [
+    "CreateBatchWebhooksResponse",
     "ListBatchWebhooksResponse",
     "ListBatchWebhooksResponseLinksItem",
     "ListBatchWebhooksResponseLinksItemMethod",

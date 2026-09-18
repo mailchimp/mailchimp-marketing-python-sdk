@@ -47,11 +47,6 @@ class ListWebhooks(UniversalBaseModel):
     Whether outbound deliveries are HMAC-signed.
     """
 
-    signing_secret: typing.Optional[str] = pydantic.Field(default=None)
-    """
-    The HMAC signing secret. Returned exactly once at creation. This should be stored securely; if lost, delete and recreate the webhook to obtain a new secret.
-    """
-
     sources: typing.Optional[ListWebhooksSources] = pydantic.Field(default=None)
     """
     The possible sources of any events that can trigger the webhook and whether they are enabled.

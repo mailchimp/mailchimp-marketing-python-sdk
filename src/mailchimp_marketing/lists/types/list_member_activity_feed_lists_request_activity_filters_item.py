@@ -29,11 +29,6 @@ ListMemberActivityFeedListsRequestActivityFiltersItem = typing.Union[
         "video_call_transcripts",
         "whatsapp_bulk_sent",
         "whatsapp_delivered",
-        "whatsapp_link_click",
-        "whatsapp_subscribe",
-        "whatsapp_subscription_phone_updated",
-        "whatsapp_unsubscribe",
-        "whatsapp_used_keyword",
     ],
     typing.Any,
 ]

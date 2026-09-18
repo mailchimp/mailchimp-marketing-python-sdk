@@ -6,10 +6,12 @@ import typing
 from importlib import import_module
 
 if typing.TYPE_CHECKING:
+    from .create_batch_webhooks_response import CreateBatchWebhooksResponse
     from .list_batch_webhooks_response import ListBatchWebhooksResponse
     from .list_batch_webhooks_response_links_item import ListBatchWebhooksResponseLinksItem
     from .list_batch_webhooks_response_links_item_method import ListBatchWebhooksResponseLinksItemMethod
 _dynamic_imports: typing.Dict[str, str] = {
+    "CreateBatchWebhooksResponse": ".create_batch_webhooks_response",
     "ListBatchWebhooksResponse": ".list_batch_webhooks_response",
     "ListBatchWebhooksResponseLinksItem": ".list_batch_webhooks_response_links_item",
     "ListBatchWebhooksResponseLinksItemMethod": ".list_batch_webhooks_response_links_item_method",
@@ -38,6 +40,7 @@ def __dir__():
 
 
 __all__ = [
+    "CreateBatchWebhooksResponse",
     "ListBatchWebhooksResponse",
     "ListBatchWebhooksResponseLinksItem",
     "ListBatchWebhooksResponseLinksItemMethod",

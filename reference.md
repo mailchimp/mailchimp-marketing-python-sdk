@@ -491,6 +491,697 @@ client.activity_feed.list_chimp_chatter()
 </dl>
 </details>
 
+## Audiences
+<details><summary><code>client.audiences.<a href="src/mailchimp_marketing/audiences/client.py">get_audience_contact_list</a>(...) -> GetAudienceContactListResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get a list of omni-channel contacts for a given audience.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from mailchimp_marketing import MailchimpClient
+from mailchimp_marketing.environment import MailchimpClientEnvironment
+
+client = MailchimpClient(
+    token="<token>",
+    environment=MailchimpClientEnvironment.DEFAULT,
+)
+
+client.audiences.get_audience_contact_list(
+    audience_id="audience_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audience_id:** `str` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**fields:** `typing.Optional[typing.Union[str, typing.Sequence[str]]]` — A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**exclude_fields:** `typing.Optional[typing.Union[str, typing.Sequence[str]]]` — A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**count:** `typing.Optional[int]` — The number of records to return. Default value is 10. Maximum value is 1000
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**cursor:** `typing.Optional[str]` — Paginate through a collection of records by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request. Default value fetches the first "page" of results.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**created_before:** `typing.Optional[datetime.datetime]` — Restricts the response to contacts created at or before the specified time (inclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**created_since:** `typing.Optional[datetime.datetime]` — Restricts the response to contacts created after the specified time (exclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**updated_before:** `typing.Optional[datetime.datetime]` — Restricts the response to contacts updated at or before the specified time (inclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**updated_since:** `typing.Optional[datetime.datetime]` — Restricts the response to contacts updated after the specified time (exclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sort_field:** `typing.Optional[GetAudienceContactListRequestSortField]` — Specifies the field to sort the returned contacts by.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sort_dir:** `typing.Optional[GetAudienceContactListRequestSortDir]` — Determines the order direction for sorted results.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.audiences.<a href="src/mailchimp_marketing/audiences/client.py">create_audience_contact</a>(...) -> AudiencesContact</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create a new omni-channel contact for an audience.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from mailchimp_marketing import MailchimpClient
+from mailchimp_marketing.environment import MailchimpClientEnvironment
+
+client = MailchimpClient(
+    token="<token>",
+    environment=MailchimpClientEnvironment.DEFAULT,
+)
+
+client.audiences.create_audience_contact(
+    audience_id="audience_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audience_id:** `str` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**merge_field_validation_mode:** `typing.Optional[CreateAudienceContactRequestMergeFieldValidationMode]` — Defines how merge field validation is handled. When set to `ignore_required_checks`, the API does not raise an error if required merge fields are missing from the request. When set to `strict`, the API enforces validation and returns an error if any required merge field is not provided. If this setting is omitted, `strict` is applied by default.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**data_mode:** `typing.Optional[CreateAudienceContactRequestDataMode]` — Indicates the data processing mode. In `historical` mode, contact data changes do not trigger automations or webhooks. In `live mode`, such changes do trigger them.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**email_channel:** `typing.Optional[CreateAudienceContactRequestEmailChannel]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**language:** `typing.Optional[str]` — The contact's detected language.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**merge_fields:** `typing.Optional[typing.Dict[str, CreateAudienceContactRequestMergeFieldsValue]]` — A dictionary of merge fields where the keys are the merge tags. See the [Merge Fields documentation](https://mailchimp.com/developer/marketing/docs/merge-fields/#structure) for more about the structure.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sms_channel:** `typing.Optional[CreateAudienceContactRequestSmsChannel]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**tags:** `typing.Optional[typing.List[CreateAudienceContactRequestTagsItem]]` — An array of tags to add to the contact. Accepts tag name strings or objects with name and status. This operation is append-only; existing tags will be preserved, and only new tags from this array will be added.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**update_existing:** `typing.Optional[bool]` — If a contact already exists, update them instead of returning a conflict error. When `true` and a matching contact is found (by email or phone), the existing contact is updated with the provided channel data. Defaults to `false`.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.audiences.<a href="src/mailchimp_marketing/audiences/client.py">get_audience_contact</a>(...) -> AudiencesContact</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a specific omni-channel contact in an audience.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from mailchimp_marketing import MailchimpClient
+from mailchimp_marketing.environment import MailchimpClientEnvironment
+
+client = MailchimpClient(
+    token="<token>",
+    environment=MailchimpClientEnvironment.DEFAULT,
+)
+
+client.audiences.get_audience_contact(
+    audience_id="audience_id",
+    contact_id="contact_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audience_id:** `str` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contact_id:** `str` — A unique identifier for the contact, which can be a Mailchimp contact ID or a channel hash. A channel hash must follow the format email:[md5_hash] (where the hash is the MD5 of the lowercased email address) or sms:[sha256_hash] (where the hash is the SHA256 of the E.164-formatted phone number).
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**fields:** `typing.Optional[typing.Union[str, typing.Sequence[str]]]` — A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**exclude_fields:** `typing.Optional[typing.Union[str, typing.Sequence[str]]]` — A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.audiences.<a href="src/mailchimp_marketing/audiences/client.py">patch_audience_contact</a>(...) -> AudiencesContact</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Update an existing omni-channel contact.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from mailchimp_marketing import MailchimpClient
+from mailchimp_marketing.environment import MailchimpClientEnvironment
+
+client = MailchimpClient(
+    token="<token>",
+    environment=MailchimpClientEnvironment.DEFAULT,
+)
+
+client.audiences.patch_audience_contact(
+    audience_id="audience_id",
+    contact_id="contact_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audience_id:** `str` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contact_id:** `str` — The unique id for the contact.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**merge_field_validation_mode:** `typing.Optional[PatchAudienceContactRequestMergeFieldValidationMode]` — Defines how merge field validation is handled. When set to `ignore_required_checks`, the API does not raise an error if required merge fields are missing from the request. When set to `strict`, the API enforces validation and returns an error if any required merge field is not provided. If this setting is omitted, `strict` is applied by default.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**data_mode:** `typing.Optional[PatchAudienceContactRequestDataMode]` — Indicates the data processing mode. In `historical` mode, contact data changes do not trigger automations or webhooks. In `live mode`, such changes do trigger them.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**email_channel:** `typing.Optional[PatchAudienceContactRequestEmailChannel]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**language:** `typing.Optional[str]` — The contact's detected language.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**merge_fields:** `typing.Optional[typing.Dict[str, PatchAudienceContactRequestMergeFieldsValue]]` — A dictionary of merge fields where the keys are the merge tags. See the [Merge Fields documentation](https://mailchimp.com/developer/marketing/docs/merge-fields/#structure) for more about the structure.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sms_channel:** `typing.Optional[PatchAudienceContactRequestSmsChannel]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**tags:** `typing.Optional[typing.List[PatchAudienceContactRequestTagsItem]]` — An array of tags to add to the contact. Accepts tag name strings or objects with name and status. This operation is append-only; existing tags will be preserved, and only new tags from this array will be added.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.audiences.<a href="src/mailchimp_marketing/audiences/client.py">post_audiences_contacts_actions_archive</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Archives a Contact.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from mailchimp_marketing import MailchimpClient
+from mailchimp_marketing.environment import MailchimpClientEnvironment
+
+client = MailchimpClient(
+    token="<token>",
+    environment=MailchimpClientEnvironment.DEFAULT,
+)
+
+client.audiences.post_audiences_contacts_actions_archive(
+    audience_id="audience_id",
+    contact_id="contact_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audience_id:** `str` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contact_id:** `str` — The unique id for the contact.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.audiences.<a href="src/mailchimp_marketing/audiences/client.py">post_audiences_contacts_actions_forget</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Forgets a Contact.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from mailchimp_marketing import MailchimpClient
+from mailchimp_marketing.environment import MailchimpClientEnvironment
+
+client = MailchimpClient(
+    token="<token>",
+    environment=MailchimpClientEnvironment.DEFAULT,
+)
+
+client.audiences.post_audiences_contacts_actions_forget(
+    audience_id="audience_id",
+    contact_id="contact_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audience_id:** `str` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contact_id:** `str` — The unique id for the contact.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 ## AuthorizedApps
 <details><summary><code>client.authorized_apps.<a href="src/mailchimp_marketing/authorized_apps/client.py">list</a>(...) -> ListAuthorizedAppsResponse</code></summary>
 <dl>
@@ -2309,7 +3000,7 @@ client.batch_webhooks.list()
 </dl>
 </details>
 
-<details><summary><code>client.batch_webhooks.<a href="src/mailchimp_marketing/batch_webhooks/client.py">create</a>(...) -> BatchWebhook</code></summary>
+<details><summary><code>client.batch_webhooks.<a href="src/mailchimp_marketing/batch_webhooks/client.py">create</a>(...) -> CreateBatchWebhooksResponse</code></summary>
 <dl>
 <dd>
 
@@ -23179,7 +23870,7 @@ client.lists.list_webhooks(
 </dl>
 </details>
 
-<details><summary><code>client.lists.<a href="src/mailchimp_marketing/lists/client.py">create_webhook</a>(...) -> ListWebhooks</code></summary>
+<details><summary><code>client.lists.<a href="src/mailchimp_marketing/lists/client.py">create_webhook</a>(...) -> CreateWebhookListsResponse</code></summary>
 <dl>
 <dd>
 

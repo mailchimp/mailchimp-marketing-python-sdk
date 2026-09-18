@@ -12,6 +12,7 @@ from .environment import MailchimpClientEnvironment
 if typing.TYPE_CHECKING:
     from .account_exports.client import AccountExportsClient, AsyncAccountExportsClient
     from .activity_feed.client import ActivityFeedClient, AsyncActivityFeedClient
+    from .audiences.client import AsyncAudiencesClient, AudiencesClient
     from .authorized_apps.client import AsyncAuthorizedAppsClient, AuthorizedAppsClient
     from .automations.client import AsyncAutomationsClient, AutomationsClient
     from .batch_webhooks.client import AsyncBatchWebhooksClient, BatchWebhooksClient
@@ -126,6 +127,7 @@ class MailchimpClient:
         self._root: typing.Optional[RootClient] = None
         self._account_exports: typing.Optional[AccountExportsClient] = None
         self._activity_feed: typing.Optional[ActivityFeedClient] = None
+        self._audiences: typing.Optional[AudiencesClient] = None
         self._authorized_apps: typing.Optional[AuthorizedAppsClient] = None
         self._automations: typing.Optional[AutomationsClient] = None
         self._batch_webhooks: typing.Optional[BatchWebhooksClient] = None
@@ -174,6 +176,14 @@ class MailchimpClient:
 
             self._activity_feed = ActivityFeedClient(client_wrapper=self._client_wrapper)
         return self._activity_feed
+
+    @property
+    def audiences(self):
+        if self._audiences is None:
+            from .audiences.client import AudiencesClient  # noqa: E402
+
+            self._audiences = AudiencesClient(client_wrapper=self._client_wrapper)
+        return self._audiences
 
     @property
     def authorized_apps(self):
@@ -476,6 +486,7 @@ class AsyncMailchimpClient:
         self._root: typing.Optional[AsyncRootClient] = None
         self._account_exports: typing.Optional[AsyncAccountExportsClient] = None
         self._activity_feed: typing.Optional[AsyncActivityFeedClient] = None
+        self._audiences: typing.Optional[AsyncAudiencesClient] = None
         self._authorized_apps: typing.Optional[AsyncAuthorizedAppsClient] = None
         self._automations: typing.Optional[AsyncAutomationsClient] = None
         self._batch_webhooks: typing.Optional[AsyncBatchWebhooksClient] = None
@@ -524,6 +535,14 @@ class AsyncMailchimpClient:
 
             self._activity_feed = AsyncActivityFeedClient(client_wrapper=self._client_wrapper)
         return self._activity_feed
+
+    @property
+    def audiences(self):
+        if self._audiences is None:
+            from .audiences.client import AsyncAudiencesClient  # noqa: E402
+
+            self._audiences = AsyncAudiencesClient(client_wrapper=self._client_wrapper)
+        return self._audiences
 
     @property
     def authorized_apps(self):
